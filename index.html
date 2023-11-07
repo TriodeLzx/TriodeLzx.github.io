@@ -73,6 +73,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-TEST-PAGE" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/11/07/TEST-PAGE/" class="article-date">
+  <time class="dt-published" datetime="2023-11-07T10:56:12.000Z" itemprop="datePublished">2023-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/11/07/TEST-PAGE/">TEST PAGE</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>实际上，在RSA公钥体系中，将密码转化为明码需要求解下列同余方程<br>
+$$<br>
+b^d\equiv a^{ed}\equiv a^{1+k\varphi(n)}(modn)(e为密钥，n为解钥，b为密码，a为明码)<br>
+$$<br>
+而对于欧拉函数，有如下定理：<br>
+$$<br>
+\varphi(n)=\varphi(p_1^{\alpha_1}) \varphi(p_2^{\alpha_2}) \varphi(p_3^{\alpha_3}) \cdots \varphi(p_k^{\alpha_k})(p_1,p_2,p_3,\cdots p_k是n的不同质因数，且有p_1<sup>{\alpha_1}p_2</sup>{\alpha_2}p_3^{\alpha_3}\cdots p_k^{\alpha_k}=n)<br>
+$$<br>
+而对于质数p，其欧拉函数值为：<br>
+$$<br>
+\varphi(p)=p-1<br>
+$$<br>
+所以对于对于题中解钥n，有：<br>
+$$<br>
+\varphi(n)=(p_1-1)(p_2-1)(p_3-1)\cdots(p_{16}-1)(p_1,p_2,p_3,\cdots,p_{16}为n的16个不同的质因数<br>
+$$<br>
+所以我们可以写出获得flag的代码如下：</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/11/07/TEST-PAGE/" data-id="cloo7zs3u0000z4y625zkb9om" data-title="TEST PAGE" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Aurora入队赛个人WP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2023/11/07/Aurora%E5%85%A5%E9%98%9F%E8%B5%9B%E4%B8%AA%E4%BA%BAWP/" class="article-date">
@@ -178,6 +233,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/11/07/TEST-PAGE/">TEST PAGE</a>
+          </li>
         
           <li>
             <a href="/2023/11/07/Aurora%E5%85%A5%E9%98%9F%E8%B5%9B%E4%B8%AA%E4%BA%BAWP/">Aurora入队赛个人WP</a>
