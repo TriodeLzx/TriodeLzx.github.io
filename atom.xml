@@ -3,11 +3,11 @@
   <title>Triode Field</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://triodelzx.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://triodelzx.github.io/"/>
   <updated>2024-03-09T04:28:34.240Z</updated>
-  <id>http://example.com/</id>
+  <id>https://triodelzx.github.io/</id>
   
   <author>
     <name>Triode_Lzx</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>连分数（Continued Fractions）笔记</title>
-    <link href="http://example.com/2024/03/09/%E8%BF%9E%E5%88%86%E6%95%B0%EF%BC%88Continued-Fractions%EF%BC%89%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2024/03/09/%E8%BF%9E%E5%88%86%E6%95%B0%EF%BC%88Continued-Fractions%EF%BC%89%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://triodelzx.github.io/2024/03/09/%E8%BF%9E%E5%88%86%E6%95%B0%EF%BC%88Continued-Fractions%EF%BC%89%E7%AC%94%E8%AE%B0/"/>
+    <id>https://triodelzx.github.io/2024/03/09/%E8%BF%9E%E5%88%86%E6%95%B0%EF%BC%88Continued-Fractions%EF%BC%89%E7%AC%94%E8%AE%B0/</id>
     <published>2024-03-09T04:23:07.000Z</published>
     <updated>2024-03-09T04:28:34.240Z</updated>
     
@@ -36,19 +36,19 @@
     
     
     
-    <category term="数论笔记" scheme="http://example.com/categories/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
+    <category term="数论笔记" scheme="https://triodelzx.github.io/categories/%E6%95%B0%E8%AE%BA%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Crypto" scheme="http://example.com/tags/Crypto/"/>
+    <category term="Crypto" scheme="https://triodelzx.github.io/tags/Crypto/"/>
     
-    <category term="数学" scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="https://triodelzx.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
   <entry>
     <title>LCG笔记</title>
-    <link href="http://example.com/2023/12/17/LCG%E7%AC%94%E8%AE%B0/"/>
-    <id>http://example.com/2023/12/17/LCG%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://triodelzx.github.io/2023/12/17/LCG%E7%AC%94%E8%AE%B0/"/>
+    <id>https://triodelzx.github.io/2023/12/17/LCG%E7%AC%94%E8%AE%B0/</id>
     <published>2023-12-17T14:13:59.000Z</published>
     <updated>2023-12-17T14:44:56.723Z</updated>
     
@@ -64,17 +64,17 @@ X_{n+1}&#92;equiv aX_n+b&#92; (m</summary>
     
     
     
-    <category term="密码学笔记" scheme="http://example.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="密码学笔记" scheme="https://triodelzx.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Crypto" scheme="http://example.com/tags/Crypto/"/>
+    <category term="Crypto" scheme="https://triodelzx.github.io/tags/Crypto/"/>
     
   </entry>
   
   <entry>
     <title>Anshel–Anshel–Goldfeld 密钥交换体系(Anshel–Anshel–Goldfeld key exchange)</title>
-    <link href="http://example.com/2023/12/15/Anshel%E2%80%93Anshel%E2%80%93Goldfeld-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E4%BD%93%E7%B3%BB-Anshel%E2%80%93Anshel%E2%80%93Goldfeld-key-exchange/"/>
-    <id>http://example.com/2023/12/15/Anshel%E2%80%93Anshel%E2%80%93Goldfeld-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E4%BD%93%E7%B3%BB-Anshel%E2%80%93Anshel%E2%80%93Goldfeld-key-exchange/</id>
+    <link href="https://triodelzx.github.io/2023/12/15/Anshel%E2%80%93Anshel%E2%80%93Goldfeld-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E4%BD%93%E7%B3%BB-Anshel%E2%80%93Anshel%E2%80%93Goldfeld-key-exchange/"/>
+    <id>https://triodelzx.github.io/2023/12/15/Anshel%E2%80%93Anshel%E2%80%93Goldfeld-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E4%BD%93%E7%B3%BB-Anshel%E2%80%93Anshel%E2%80%93Goldfeld-key-exchange/</id>
     <published>2023-12-15T12:50:27.000Z</published>
     <updated>2023-12-17T07:39:25.567Z</updated>
     
@@ -88,17 +88,17 @@ X_{n+1}&#92;equiv aX_n+b&#92; (m</summary>
     
     
     
-    <category term="密码学笔记" scheme="http://example.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="密码学笔记" scheme="https://triodelzx.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Crypto" scheme="http://example.com/tags/Crypto/"/>
+    <category term="Crypto" scheme="https://triodelzx.github.io/tags/Crypto/"/>
     
   </entry>
   
   <entry>
     <title>Triode的RSA学习笔记（1）</title>
-    <link href="http://example.com/2023/11/17/Triode%E7%9A%84RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/"/>
-    <id>http://example.com/2023/11/17/Triode%E7%9A%84RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</id>
+    <link href="https://triodelzx.github.io/2023/11/17/Triode%E7%9A%84RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/"/>
+    <id>https://triodelzx.github.io/2023/11/17/Triode%E7%9A%84RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</id>
     <published>2023-11-17T05:20:03.000Z</published>
     <updated>2023-11-17T05:23:46.300Z</updated>
     
@@ -114,17 +114,17 @@ X_{n+1}&#92;equiv aX_n+b&#92; (m</summary>
     
     
     
-    <category term="密码学笔记" scheme="http://example.com/categories/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="密码学笔记" scheme="https://triodelzx.github.io/categories/%E5%AF%86%E7%A0%81%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Crypto" scheme="http://example.com/tags/Crypto/"/>
+    <category term="Crypto" scheme="https://triodelzx.github.io/tags/Crypto/"/>
     
   </entry>
   
   <entry>
     <title>深大Aurora第一批入队赛WP</title>
-    <link href="http://example.com/2023/11/11/%E6%B7%B1%E5%A4%A7Aurora%E7%AC%AC%E4%B8%80%E6%89%B9%E5%85%A5%E9%98%9F%E8%B5%9BWP/"/>
-    <id>http://example.com/2023/11/11/%E6%B7%B1%E5%A4%A7Aurora%E7%AC%AC%E4%B8%80%E6%89%B9%E5%85%A5%E9%98%9F%E8%B5%9BWP/</id>
+    <link href="https://triodelzx.github.io/2023/11/11/%E6%B7%B1%E5%A4%A7Aurora%E7%AC%AC%E4%B8%80%E6%89%B9%E5%85%A5%E9%98%9F%E8%B5%9BWP/"/>
+    <id>https://triodelzx.github.io/2023/11/11/%E6%B7%B1%E5%A4%A7Aurora%E7%AC%AC%E4%B8%80%E6%89%B9%E5%85%A5%E9%98%9F%E8%B5%9BWP/</id>
     <published>2023-11-11T11:37:13.000Z</published>
     <updated>2023-11-12T05:28:49.123Z</updated>
     
@@ -139,7 +139,7 @@ X_{n+1}&#92;equiv aX_n+b&#92; (m</summary>
     
     
     
-    <category term="信安WP" scheme="http://example.com/categories/%E4%BF%A1%E5%AE%89WP/"/>
+    <category term="信安WP" scheme="https://triodelzx.github.io/categories/%E4%BF%A1%E5%AE%89WP/"/>
     
     
   </entry>
