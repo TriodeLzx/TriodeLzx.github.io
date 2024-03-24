@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>向量空间（Vector Space）学习笔记 | Triode Field</title><meta name="keywords" content="高等代数笔记"><meta name="author" content="Triode_Lzx"><meta name="copyright" content="Triode_Lzx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="向量空间（Vector Space）学习笔记"><meta name="application-name" content="向量空间（Vector Space）学习笔记"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="向量空间（Vector Space）学习笔记"><meta property="og:url" content="https://triodelzx.github.io/2024/03/24/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%EF%BC%88Vector-Space%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html"><meta property="og:site_name" content="Triode Field"><meta property="og:description" content="由于近期高等代数课程正在讲向量空间，所以想着结合一下高中对于向量空间的学习整理一下一些知识点和笔记。 参考书籍：《高等代数（第五版）》（北京大学数学系前代数小组 编，高等教育出版社）（以下简称北大版），《高等代数（第五版）》（张禾瑞、郝鈵新 编，高等教育出版社）（以下简称北师大版） 向量空间的定义设"><meta property="og:locale" content="en"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111553454.jpg"><meta property="article:author" content="Triode_Lzx"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111553454.jpg"><meta name="description" content="由于近期高等代数课程正在讲向量空间，所以想着结合一下高中对于向量空间的学习整理一下一些知识点和笔记。 参考书籍：《高等代数（第五版）》（北京大学数学系前代数小组 编，高等教育出版社）（以下简称北大版），《高等代数（第五版）》（张禾瑞、郝鈵新 编，高等教育出版社）（以下简称北师大版） 向量空间的定义设"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://triodelzx.github.io/2024/03/24/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%EF%BC%88Vector-Space%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"Author: Triode_Lzx","link":"Link: ","source":"Source: Triode Field","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.","copySuccess":"Copy success, copy and reprint please mark the address of this article"}},
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"Traditional Chinese Activated Manually","cht_to_chs":"Simplified Chinese Activated Manually","day_to_night":"Dark Mode Activated Manually","night_to_day":"Light Mode Activated Manually","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'Triode Field',
+  title: '向量空间（Vector Space）学习笔记',
+  postAI: '',
+  pageFillDescription: '向量空间的定义, 向量空间的一些简单的性质, 子空间, 子空间的和与直和, 向量的线性相关性、向量组的等价及向量组的极大线性无关组, 基和维数由于近期高等代数课程正在讲向量空间所以想着结合一下高中对于向量空间的学习整理一下一些知识点和笔记参考书籍高等代数第五版北京大学数学系前代数小组编高等教育出版社以下简称北大版高等代数第五版张禾瑞郝鈵新编高等教育出版社以下简称北师大版向量空间的定义设是一个非空集合为一个数域在集合的元素之间定义一代数运算称为加法即给出一个法则对于中任意两个元素与在中都有唯一的一个元素称为与的和记为在数域与集合的元素之间还定义了一种运算称为数量乘法即对于数域中任一数与中任意元素在中都有唯一的一个元素与它们对应称为与的数量乘积简称数乘记为若加法与数乘满足下述规则那么称为数域上的向量空间或称线性空间向量空间或集合中的元素用小写黑体希腊字母表示数域中元素用小写拉丁字母表示在中有一元素对于中任一元素都有具有该性质的元素称为的零元素对于中每一元素都有中的元素使得称为的负元素下同向量空间的一些简单的性质零元素是唯一的负元素是唯一的若则有或子空间子空间的定义令是数域上向量空间的一个非空子集若对于的加法以及标量与向量的乘法来说是封闭的那么就称是的一个子空间定理数域上向量空间的一个非空子集是的一个子空间当且仅当对于任意及任意都有子空间的和与直和子空间和的定义设为向量空间的两个子空间那么的和是指由所有能表示为而的向量组成的子集合记作在子空间的和中有一种特殊的情形被称为直和定义如下直和的定义设设为向量空间的两个子空间若和中每个向量的分解式是唯一的则称这个和为直和记为余子空间的定义设为向量空间的一个子空间若对于的一个子空间满足则称是的一个余子空间由定义我们可以知道和是直和的充分必要条件为等式其中只有在全为零向量时才成立和是直和的充分必要条件为向量的线性相关性向量组的等价及向量组的极大线性无关组线性组合的定义设是向量空间的个向量是数域中任意个数我们将和称为向量的一个线性组合而称向量被线性表示线性相关的定义设是向量空间的个向量若存在中不全为零的数使得则称线性相关若向量组不线性相关则称它们线性无关向量组等价的定义设和是向量空间的两个向量组若每一都可以由线性表示而每一也可以由线性表示那么就说这两个向量组等价极大线性无关组的定义对于向量组的一个部分向量组若线性无关且对于每一都可以由线性表示则称部分向量组为的一个极大线性无关部分组简称极大线性无关组实际上在解析几何中我们已经接触过线性相关与线性无关的概念在高等代数中将向量这一概念泛化之后我们可以知道在向量空间数域中一元多项式环中对于任意非负整数有线性无关下面是几个有用的定理定理若向量可以由线性表示而每一又可以由线性表示那么可以被线性表示定理若向量组线性无关而向量组线性相关则可以由线性表示定理向量线性相关当且仅当其中某一个向量是其余向量的线性组合定理替换定理设向量组线性无关并且每一都可以由向量组线性表示那么且必要时可以对中向量重新编号使得用替换后所得的向量组与等价替换定理推论两个等价的线性无关的向量组含有相同个数的向量替换定理推论等价的向量组的极大无关组含有相同个数的向量特别的一个向量组的任意两个极大无关组含有相同个数的向量下面是一个求中列向量组的一个极大线性无关组的方法首先将列向量组拼接为一个矩阵将其化为行最简形式并得出矩阵的秩从中挑选非零数最少的个列向量一般只有一个元素是而其余是这些变换后的列向量对应的原向量组成的向量组即为向量组的一个极大线性无关组举个例子已知向量组其中求这个向量组的一个极大线性无关组解将这个向量拼接为一个矩阵如下取第列向量对应的原向量即可得到向量组的一个极大线性无关组为基和维数生成元和生成子空间的定义设为数域上一个向量空间由的一切线性组合所成的集合显然是的一个子空间称这个子空间为由所生成的子空间并用符号表示向量叫做这个子空间的一组生成元基的定义设是数域上一个向量空间对于中一向量组若线性无关且中的每一向量都可以被线性表示则称向量组为的一个基根据定义我们很容易可以知道向量空间的一个基就是的一组线性无关的生成元而对数域中的个向量这里除第为外其余位置元素均为零显然向量组是的一个基这个基称为的标准基或称标准正交基维的定义一个向量空间的基所含向量个数称为的维数记作特别的我们定义零空间的维数为几个常见向量空间的维数的维数为上一切的矩阵所成的向量空间的维数为是无限维的下面是关于基和维数的几个定理定理设是向量空间的一个基那么中的每一个向量可以唯一地被表成基向量的线性组合定理维向量空间中任意多于个向量一定线性相关定理设为维向量空间中一组线性无关向量那么总可以添加个向量使得作成的一组基特别的维向量空间中任意个线性无关的向量都可以取作基定理维数定理设和都是数域上向量空间的有限维子空间那么也是有限维的且对于向量空间的基即为的生成元构成的向量组的一个极大线性无关组在对维列向量组成的向量空间使用维数定理时我们常常需要求与下面是求它们的方法设将的生成元拼接为矩阵求出向量组的一个极大线性无关组设为则且求出矩阵所表示的齐次线性方程组的基础解系那么我们可以得到且有基础解系相关定义将会在后面给出显然有而由基础解系的概念显然有所以可以得到',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-03-24 23:32:56',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Triode Field" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111553454.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">Triode Field</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111603807.jpg" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111603807.jpg"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111605914.jpg" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111605914.jpg"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Crypto/" style="font-size: 1.05rem;">Crypto<sup>4</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 1.05rem;">数学<sup>1</sup></a><a href="/tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/" style="font-size: 1.05rem;">高等代数笔记<sup>1</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/03/"><span class="card-archive-list-date">March 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">December 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">November 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"><a class="article-meta__tags" href="/tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>高等代数笔记</span></a></span></div></div><h1 class="post-title" itemprop="name headline">向量空间（Vector Space）学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-03-24T15:26:39.000Z" title="Created 2024-03-24 23:26:39">2024-03-24</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-03-24T15:32:56.535Z" title="Updated 2024-03-24 23:32:56">2024-03-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为Vector Space"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>Vector Space</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://triodelzx.github.io/2024/03/24/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%EF%BC%88Vector-Space%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><header><a href="/tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/" tabindex="-1" itemprop="url">高等代数笔记</a><h1 id="CrawlerTitle" itemprop="name headline">向量空间（Vector Space）学习笔记</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">Triode_Lzx</span><time itemprop="dateCreated datePublished" datetime="2024-03-24T15:26:39.000Z" title="Created 2024-03-24 23:26:39">2024-03-24</time><time itemprop="dateCreated datePublished" datetime="2024-03-24T15:32:56.535Z" title="Updated 2024-03-24 23:32:56">2024-03-24</time></header><p>由于近期高等代数课程正在讲向量空间，所以想着结合一下高中对于向量空间的学习整理一下一些知识点和笔记。</p>
+<p><strong>参考书籍：《高等代数（第五版）》（北京大学数学系前代数小组 编，高等教育出版社）（以下简称北大版），《高等代数（第五版）》（张禾瑞、郝鈵新 编，高等教育出版社）（以下简称北师大版）</strong></p>
+<h2 id="向量空间的定义"><a href="#向量空间的定义" class="headerlink" title="向量空间的定义"></a>向量空间的定义</h2><p>设$V$是一个非空集合，$F$为一个数域.在集合$V$的元素之间定义一代数运算，称为<strong>加法</strong>，即给出一个法则，对于$V$中任意两个元素$\pmb{\alpha}$与$\pmb{\beta}$，在$V$中都有唯一的一个元素$\pmb{\gamma}$，称为$\pmb{\alpha}$与$\pmb{\beta}$的和，记为$\pmb{\gamma}=\pmb{\alpha}+\pmb{\beta}$，在数域$F$与集合$V$的元素之间还定义了一种运算，称为数量乘法，即对于数域$F$中任一数$k$与$V$中任意元素$\pmb{\alpha}$，在$V$中都有唯一的一个元素$\pmb{\delta}$与它们对应，称为$k$与$\pmb{\alpha}$的<strong>数量乘积</strong>（简称<strong>数乘</strong>），记为$\pmb{\delta}=k\pmb{\alpha}$.若加法与数乘满足下述规则，那么$V$称为数域$P$上的<strong>向量空间</strong>（或称<strong>线性空间</strong>）（向量空间或集合$V$中的元素用小写黑体希腊字母表示，数域中元素用小写拉丁字母表示）：</p>
+<script type="math/tex; mode=display">
+\begin{flalign}
+&(1)\ \pmb{\alpha}+\pmb{\beta}=\pmb{\beta}+\pmb{\alpha};\\
+&(2)\ (\pmb{\alpha}+\pmb{\beta})+\pmb{\gamma}=\pmb{\alpha}+(\pmb{\beta}+\pmb{\gamma});\\
+&(3)\ 在V中有一元素\pmb{0}，对于V中任一元素\pmb{\alpha} 都有\ \pmb{0}+\pmb{\alpha}=\pmb{\alpha}\\
+&(具有该性质的元素\pmb{0}称为V的零元素);\\
+&(4)\ 对于V中每一元素\pmb{\alpha} ,都有V中的元素\pmb{\beta},使得\ \pmb{\alpha}+\pmb{\beta}=0\\
+&(\pmb{\beta} 称为\pmb{\alpha} 的负元素);\\
+&(5)1\pmb{\alpha} = \pmb{\alpha};\\
+&(6)k(l\pmb{\alpha})=(kl)\pmb{\alpha}\ (k,l\in F,下同);\\
+&(7)(k+l)\pmb{\alpha} = k\pmb{\alpha}+l\pmb{\alpha};\\
+&(8)k(\pmb{\alpha}+\pmb{\beta})=k\pmb{\alpha}+k\pmb{\beta}.
+\end{flalign}</script><h2 id="向量空间的一些简单的性质"><a href="#向量空间的一些简单的性质" class="headerlink" title="向量空间的一些简单的性质"></a>向量空间的一些简单的性质</h2><p>1.零元素是唯一的.</p>
+<p>2.负元素是唯一的.</p>
+<p>3.$0\pmb{\alpha}=\pmb{0},k\pmb{0}=\pmb{0},(-1)\pmb{\alpha}=-\pmb{\alpha}$</p>
+<p>4.若$k\pmb{\alpha}=\pmb{0}$，则有$k=0$或$\pmb{\alpha}=\pmb{0}$</p>
+<h2 id="子空间"><a href="#子空间" class="headerlink" title="子空间"></a>子空间</h2><p><strong>子空间的定义：</strong>令$W$是数域$F$上向量空间$V$的一个非空子集.若$W$对于$V$的加法以及标量与向量的乘法来说是封闭的，那么就称$W$是$V$的一个<strong>子空间</strong>.</p>
+<p><strong>定理1：</strong>数域$F$上向量空间$V$的一个非空子集$W$是$V$的一个子空间，当且仅当对于任意$a,b\in F,\pmb{\alpha}$及任意$\pmb{\beta}\in W$，都有$a\pmb{\alpha}+b\pmb{\beta}\in W$</p>
+<h2 id="子空间的和与直和"><a href="#子空间的和与直和" class="headerlink" title="子空间的和与直和"></a>子空间的和与直和</h2><p><strong>子空间和的定义：</strong>设$W_1,W_2$为向量空间$V$的两个子空间.那么$W_1,W_2$的<strong>和</strong>是指由所有能表示为$\pmb{\alpha_1}+\pmb{\alpha_2}$，而$\pmb{\alpha_1}\in V_1,\pmb{\alpha_2}\in V_2$的向量组成的子集合，记作$V_1+V_2$.</p>
+<p>在子空间的和中，有一种特殊的情形，被称为<strong>直和(direct sum)</strong>，定义如下：</p>
+<p><strong>直和的定义：</strong>设设$W_1,W_2$为向量空间$V$的两个子空间，若和$W_1+W_2$中每个向量$\pmb{\alpha}$的分解式$\pmb{\alpha}=\pmb{\alpha_1}+\pmb{\alpha_2}\ (\pmb{\alpha_1}\in V_1,\pmb{\alpha_2}\in V_2)$是唯一的，则称这个和为<strong>直和</strong>，记为$V_1\oplus V_2$.</p>
+<p><strong>余子空间的定义：</strong>设$W$为向量空间$V$的一个子空间，若对于$V$的一个子空间$W’$，满足$W\oplus W’=V$，则称$W’$是$W$的一个<strong>余子空间</strong>.</p>
+<p>由定义我们可以知道：</p>
+<p>（1）和$V_1+V_2$是直和的充分必要条件为等式$\pmb{\alpha_1}+\pmb{\alpha_2}=\pmb{0}$(其中$\pmb{\alpha_1}\in V_1,\pmb{\alpha_2}\in V_2)$只有在$\pmb{\alpha_1},\pmb{\alpha_2}$全为零向量时才成立；</p>
+<p>（2）和$V_1+V_2$是直和的充分必要条件为$V_1\cap V_2=\{\pmb{0}\}$；</p>
+<h2 id="向量的线性相关性、向量组的等价及向量组的极大线性无关组"><a href="#向量的线性相关性、向量组的等价及向量组的极大线性无关组" class="headerlink" title="向量的线性相关性、向量组的等价及向量组的极大线性无关组"></a>向量的线性相关性、向量组的等价及向量组的极大线性无关组</h2><p> <strong>线性组合的定义：</strong>设$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$是向量空间$V$的$r$个向量，$a_1,a_2,\cdots,a_r$是数域$F$中任意$r$个数.我们将和$\pmb{\alpha}=a_1\pmb{\alpha_1}+a_2\pmb{\alpha_2}+\cdots+a_r\pmb{\alpha_r}$称为向量$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$的一个<strong>线性组合</strong>，而称向量$\pmb{\alpha}$被$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$<strong>线性表示</strong>.</p>
+<p><strong>线性相关的定义：</strong>设$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$是向量空间$V$的$r$个向量，若存在$F$中不全为零的数$a_1,a_2,\cdots,a_r$，使得：$a_1\pmb{\alpha_1}+a_2\pmb{\alpha_2}+\cdots+a_r\pmb{\alpha_r}=\pmb{0}$，则称$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$线性相关.</p>
+<p>若向量组不线性相关，则称它们<strong>线性无关</strong>.</p>
+<p><strong>向量组等价的定义：</strong>设$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\}$和$\{\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s}\}$是向量空间$V$的两个向量组. 若每一$\pmb{\alpha_i}$都可以由$\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s}$线性表示，而每一$\pmb{\beta_j}$也可以由$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$线性表示，那么就说这两个向量组<strong>等价</strong>.</p>
+<p><strong>极大线性无关组的定义：</strong>对于向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}\}$的一个部分向量组$\{\pmb{\alpha_{i_1}},\pmb{\alpha_{i_2}},\cdots,\pmb{\alpha_{i_r}}\}$，若$\pmb{\alpha_{i_1}},\pmb{\alpha_{i_2}},\cdots,\pmb{\alpha_{i_r}}$线性无关且对于每一$\pmb{\alpha_j}\ (j=1\cdots,n)$都可以由$\pmb{\alpha_{i_1}},\pmb{\alpha_{i_2}},\cdots,\pmb{\alpha_{i_r}}$线性表示，则称部分向量组$\{\pmb{\alpha_{i_1}},\pmb{\alpha_{i_2}},\cdots,\pmb{\alpha_{i_r}}\}$为$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}\}$的一个<strong>极大线性无关部分组</strong>（简称<strong>极大线性无关组</strong>）.</p>
+<p>实际上，在解析几何中，我们已经接触过线性相关与线性无关的概念，在高等代数中，将“向量”这一概念泛化之后，我们可以知道：在向量空间$F\left[x\right]$（数域$F$中一元多项式环）中，对于任意非负整数$n$，有$1,x,x^2,\cdots,x^n$线性无关.</p>
+<p>下面是几个有用的定理：</p>
+<p><strong>定理2：</strong>若向量$\pmb{\gamma}$可以由$\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_r}$线性表示，而每一$\pmb{\beta_i}$又可以由$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$线性表示，那么$\pmb{\gamma}$可以被$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$线性表示.</p>
+<p><strong>定理3：</strong>若向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\}$线性无关，而向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r},\pmb{\beta}\}$线性相关，则$\pmb{\beta}$可以由$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$线性表示.</p>
+<p><strong>定理4：</strong>向量$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}(r\ge2)$线性相关，当且仅当其中某一个向量是其余向量的线性组合.</p>
+<p><strong>定理5（替换定理）：</strong>设向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\}$线性无关，并且每一$\pmb{\alpha_i}$都可以由向量组$\{\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s}\}$线性表示.那么$r\le s$，且必要时可以对$\{\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s}\}$中向量重新编号，使得用$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}$替换$\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_r}$后，所得的向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r},\pmb{\beta_{r+1}},\pmb{\beta_{r+2}},\cdots,\pmb{\beta_s}\}$与$\{\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s}\}$等价.</p>
+<p><strong>替换定理推论1：</strong>两个等价的线性无关的向量组含有相同个数的向量.</p>
+<p><strong>替换定理推论2：</strong>等价的向量组的极大无关组含有相同个数的向量，特别的，一个向量组的任意两个极大无关组含有相同个数的向量.</p>
+<p>下面是一个求$F^n$中列向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\}$的一个极大线性无关组的方法：</p>
+<p>（1）首先将列向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\}$拼接为一个矩阵$\pmb{A}=\left(\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\right)$，</p>
+<p>（2）将其化为行最简形式，并得出矩阵$\pmb{A}$的秩$r(\pmb{A})$，</p>
+<p>（3）从中挑选非零数最少的$r(\pmb{A})$个列向量（一般只有一个元素是$1$而其余是$0$），这些变换后的列向量对应的原向量组成的向量组即为向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\}$的一个极大线性无关组.</p>
+<p>举个例子：</p>
+<p>已知向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\pmb{\alpha_3},\pmb{\alpha_4},\pmb{\alpha_5}\}$，其中$\pmb{\alpha_1}=(1,1,2,3)^T,\pmb{\alpha_2}=(-1,-1,1,1)^T,\pmb{\alpha_3}=(1,3,3,5)^T,\pmb{\alpha_4}=(4,-2,5,6)^T, \pmb{\alpha_5}=(-3,-1,-5,-7)$，求这个向量组的一个极大线性无关组.</p>
+<script type="math/tex; mode=display">
+\begin{flalign}
+解:&将这5个向量拼接为一个矩阵如下:\\
+&\left(\pmb{\alpha_1},\pmb{\alpha_2},\pmb{\alpha_3},\pmb{\alpha_4},\pmb{\alpha_5}\right)=\left(
+\begin{matrix}
+1&-1&1&4&-3\\
+1&-1&3&-2&-1\\
+2&1&3&5&-5\\
+3&1&5&6&-7
+\end{matrix}
+\right)→
+\left(
+\begin{matrix}
+1&0&0&7&-4\\
+0&1&0&0&0\\
+0&0&1&-3&1\\
+0&0&0&0&0
+\end{matrix}
+\right)\\
+&取第1，2，3列向量对应的原向量即\pmb{\alpha_1},\pmb{\alpha_2},\pmb{\alpha_3}，可得到向量组\{\pmb{\alpha_1},\pmb{\alpha_2},\pmb{\alpha_3},\pmb{\alpha_4},\pmb{\alpha_5}\}的一个极大线性无关组为\{\pmb{\alpha_1},\pmb{\alpha_2},\pmb{\alpha_3}\}.
+\end{flalign}</script><h2 id="基和维数"><a href="#基和维数" class="headerlink" title="基和维数"></a>基和维数</h2><p><strong>生成元和生成子空间的定义：</strong>设$V$为数域$F$上一个向量空间，$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}\in V$，由$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}$的一切线性组合所成的集合显然是$V$的一个子空间，称这个子空间为<strong>由$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}$所生成的子空间</strong>，并用符号$\mathscr{L}(\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n})$表示.向量$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}$叫做这个子空间的一组<strong>生成元</strong>.</p>
+<p><strong>基的定义：</strong>设$V$是数域$F$上一个向量空间.对于$V$中一向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}\}$，若$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}$线性无关且$V$中的每一向量都可以被$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}$线性表示，则称向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}\}$为$V$的一个<strong>基</strong>.</p>
+<p>根据定义，我们很容易可以知道向量空间$V$的一个基就是$V$的一组线性无关的生成元.</p>
+<p>而对数域$F^n$中的$n$个向量：$\pmb{\varepsilon_i}=(0,\cdots,0,1,0,\cdots,0)$，这里$\pmb{\varepsilon_i}$除第$i$为$1$外，其余位置元素均为零，显然向量组$\{\pmb{\varepsilon_1},\pmb{\varepsilon_2},\cdots,\pmb{\varepsilon_n}\}$是$F^n$的一个基，这个基称为$F^n$的<strong>标准基</strong>（或称<strong>标准正交基</strong>）.</p>
+<p><strong>维的定义：</strong>一个向量空间$V$的基所含向量个数称为$V$的<strong>维数</strong>，记作$\dim V$，特别的，我们定义<strong>零空间</strong>的维数为$0$.</p>
+<p>几个常见向量空间的维数：</p>
+<p>（1）$F^n$的维数为$n$；</p>
+<p>（2）$F$上一切$m×n$的矩阵所成的向量空间的维数为$mn$；</p>
+<p>（3）$F[x]$是无限维的.</p>
+<p>下面是关于基和维数的几个定理：</p>
+<p><strong>定理6：</strong>设$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}\}$是向量空间$V$的一个基.那么$V$中的每一个向量可以<strong>唯一</strong>地被表成基向量$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_n}$的线性组合.</p>
+<p><strong>定理7：</strong>$n$维向量空间中任意多于$n$个向量一定线性相关.</p>
+<p><strong>定理8：</strong>设$\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}\in V$为$n$维向量空间$V$中一组线性无关向量.那么总可以添加$n-r$个向量$\pmb{\alpha_{r+1}},\cdots,\pmb{\alpha_n}$使得$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r},\pmb{\alpha_{r+1}},\cdots,\pmb{\alpha_n}\}$作成$V$的一组基.特别的，$n$维向量空间中任意$n$个线性无关的向量都可以取作基.</p>
+<p><strong>定理9（维数定理）：</strong>设$W_1$和$W_2$都是数域$F$上向量空间$V$的有限维子空间.那么$W_1+W_2$也是有限维的，且</p>
+<script type="math/tex; mode=display">
+\dim(W_1+W_2)=\dim W_1+\dim W_2-\dim(W_1\cap W_2)</script><p>对于向量空间$V_1,V_2$，$V_1+V_2$的基即为$V_1,V_2$的生成元构成的向量组的一个极大线性无关组.</p>
+<p>在对$n$维列向量组成的向量空间$W_1,W_2$使用维数定理时，我们常常需要求$W_1+W_2$与$W_1\cap W_2$，下面是求它们的方法：</p>
+<p>设$W_1=\mathscr{L}(\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r}),W_2=\mathscr{L}(\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s})$</p>
+<p>（1）将$W_1,W_2$的生成元拼接为矩阵</p>
+<script type="math/tex; mode=display">
+\pmb{A}=(\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r},\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s})</script><p>（2）求出向量组$\{\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r},\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s}\}$的一个极大线性无关组，设为$\{\pmb{\gamma_1},\pmb{\gamma_2},\cdots,\pmb{\gamma_t}\}$，则$W_1+W_2=\mathscr{L}(\pmb{\gamma_1},\pmb{\gamma_2},\cdots,\pmb{\gamma_t})$，且$\dim (W_1+W_2)=t$</p>
+<p>（3）求出矩阵$(\pmb{\alpha_1},\pmb{\alpha_2},\cdots,\pmb{\alpha_r},\pmb{\beta_1},\pmb{\beta_2},\cdots,\pmb{\beta_s})$所表示的齐次线性方程组的<strong>基础解系</strong>$\{\pmb{\delta_1},\pmb{\delta_2},\cdots,\pmb{\delta_u}\}$，那么我们可以得到$W_1\cap W_2=\mathscr{L}(\pmb{\delta_1},\pmb{\delta_2},\cdots,\pmb{\delta_u})$，且有$\dim (W_1\cap W_2)=u$.</p>
+<p>（基础解系相关定义将会在后面给出）</p>
+<p>显然有$t=r(\pmb{A}),\dim W_1=r,\dim W_1=s$，而由基础解系的概念，显然有$u=(r+s)-t$，所以可以得到$\dim(W_1+W_2)=\dim W_1+\dim W_2-\dim(W_1\cap W_2)$.</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111553454.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111553454.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">Triode_Lzx</div><div class="post-copyright__author_desc"></div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://triodelzx.github.io/2024/03/24/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%EF%BC%88Vector-Space%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://triodelzx.github.io/2024/03/24/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%EF%BC%88Vector-Space%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/')">向量空间（Vector Space）学习笔记</span></a></div><div class="post-copyright__notice"><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>高等代数笔记<span class="tagsPageCount">1</span></a></div></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111553454.jpg" data-sites="wechat,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/03/09/%E8%BF%9E%E5%88%86%E6%95%B0%EF%BC%88Continued-Fractions%EF%BC%89%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">连分数（Continued Fractions）笔记</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://cdn.jsdelivr.net/gh/TriodeLzx/blogimage/blog202311111553454.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description"></div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/24/%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4%EF%BC%88Vector-Space%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="向量空间（Vector Space）学习笔记">向量空间（Vector Space）学习笔记</a><time datetime="2024-03-24T15:26:39.000Z" title="Created 2024-03-24 23:26:39">2024-03-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/09/%E8%BF%9E%E5%88%86%E6%95%B0%EF%BC%88Continued-Fractions%EF%BC%89%E7%AC%94%E8%AE%B0/" title="连分数（Continued Fractions）笔记">连分数（Continued Fractions）笔记</a><time datetime="2024-03-09T04:23:07.000Z" title="Created 2024-03-09 12:23:07">2024-03-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/17/LCG%E7%AC%94%E8%AE%B0/" title="LCG笔记">LCG笔记</a><time datetime="2023-12-17T14:13:59.000Z" title="Created 2023-12-17 22:13:59">2023-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/15/Anshel%E2%80%93Anshel%E2%80%93Goldfeld-%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E4%BD%93%E7%B3%BB-Anshel%E2%80%93Anshel%E2%80%93Goldfeld-key-exchange/" title="Anshel–Anshel–Goldfeld 密钥交换体系(Anshel–Anshel–Goldfeld key exchange)">Anshel–Anshel–Goldfeld 密钥交换体系(Anshel–Anshel–Goldfeld key exchange)</a><time datetime="2023-12-15T12:50:27.000Z" title="Created 2023-12-15 20:50:27">2023-12-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/17/Triode%E7%9A%84RSA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" title="Triode的RSA学习笔记（1）">Triode的RSA学习笔记（1）</a><time datetime="2023-11-17T05:20:03.000Z" title="Created 2023-11-17 13:20:03">2023-11-17</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">Articles</div><div class="length-num">6</div></a><a href="/tags/" title="tag"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/" title="category"><div class="headline">Categories</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">Function</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="Display Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>Display Mode</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/Crypto/" style="font-size: 0.88rem;">Crypto<sup>4</sup></a><a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 0.88rem;">数学<sup>1</sup></a><a href="/tags/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0/" style="font-size: 0.88rem;">高等代数笔记<sup>1</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button id="go-up" type="button" title="Back To Top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/medium-zoom@1.0.8/dist/medium-zoom.min.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2023 By 安知鱼 V1.6.9",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 Triode_Lzx 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.cbd.int/mathjax@3.2.2/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
