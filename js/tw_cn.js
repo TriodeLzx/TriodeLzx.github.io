@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     saveToLocal.get(targetEncodingCookie) === undefined
       ? defaultEncoding
       : Number(saveToLocal.get('translate-chn-cht'))
-  let translateButtonObject, translateRightMenuButtonObject;
+  let translateButtonObject
   const isSnackbar = snackbarData !== undefined
 
   function setLang () {
@@ -56,12 +56,12 @@ document.addEventListener('DOMContentLoaded', function () {
       currentEncoding = 1
       targetEncoding = 2
       translateButtonObject.textContent = msgToTraditionalChinese
-      isSnackbar && anzhiyu.snackbarShow(snackbarData.cht_to_chs)
+      isSnackbar && btf.snackbarShow(snackbarData.cht_to_chs)
     } else if (targetEncoding === 2) {
       currentEncoding = 2
       targetEncoding = 1
       translateButtonObject.textContent = msgToSimplifiedChinese
-      isSnackbar && anzhiyu.snackbarShow(snackbarData.chs_to_cht)
+      isSnackbar && btf.snackbarShow(snackbarData.chs_to_cht)
     }
     saveToLocal.set(targetEncodingCookie, targetEncoding, 2)
     setLang()
@@ -97,24 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
     return str
   }
 
-  function translateInitialization() {
-    translateButtonObject = document.getElementById('translateLink');
-    translateRightMenuButtonObject = document.getElementById('menu-translate').querySelector('span');
-
-    if (translateButtonObject || translateRightMenuButtonObject) {
+  function translateInitialization () {
+    translateButtonObject = document.getElementById('translateLink')
+    if (translateButtonObject) {
       if (currentEncoding !== targetEncoding) {
-        const textContent = targetEncoding === 1 ? msgToSimplifiedChinese : msgToTraditionalChinese;
-
-        if (translateButtonObject) {
-          translateButtonObject.textContent = textContent;
-        }
-  
-        if (translateRightMenuButtonObject) {
-          translateRightMenuButtonObject.textContent = textContent;
-        }
-  
-        setLang();
-        setTimeout(translateBody, translateDelay);
+        translateButtonObject.textContent =
+          targetEncoding === 1
+            ? msgToSimplifiedChinese
+            : msgToTraditionalChinese
+        setLang()
+        setTimeout(translateBody, translateDelay)
       }
     }
   }
