@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>近似公约数问题 (ACD)</title>
+      <link href="/2025/08/10/%E8%BF%91%E4%BC%BC%E5%85%AC%E7%BA%A6%E6%95%B0%E9%97%AE%E9%A2%98-ACD/"/>
+      <url>/2025/08/10/%E8%BF%91%E4%BC%BC%E5%85%AC%E7%BA%A6%E6%95%B0%E9%97%AE%E9%A2%98-ACD/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>参考资料：<a href="https://eprint.iacr.org/2016/215.pdf">Algorithms for the Approximate Common Divisor Problem</a></p></blockquote><p>事实上在<a href="https://triodelzx.github.io/2025/06/10/%E7%AC%AC%E4%B8%80%E5%B1%8AOpenHarmony-CTF%E4%B8%93%E9%A2%98%E8%B5%9B%EF%BC%88%E7%BA%BF%E4%B8%8A%E9%80%89%E6%8B%94%E8%B5%9B%EF%BC%89Crypto-WriteUP/">第一届OpenHarmony CTF专题赛（线上选拔赛）Crypto Write UP | Triode Field</a>的时候就已经做到过ACD问题了，但是当时是现学现做的，并没有做系统性的学习和分析，趁着暑假来补习一下（笑）</p><h2 id="近似公约数问题acd-problem">近似公约数问题（ACD Problem）</h2><p>对于给定的<span class="math inline">\(\gamma,\eta,\rho\in\mathbb{N}\)</span>，对于一个<span class="math inline">\(\eta\)</span>-bit的奇数<span class="math inline">\(p\)</span>，定义如下高效采样分布<span class="math inline">\(\mathcal{D}_{\gamma,\rho}(p)\)</span>： <span class="math display">\[\mathcal{D}_{\gamma,\rho}(p)=\left\{pq+r|q\in\mathbb{Z}\cap\left[0,\frac{2^{\gamma}}{p}\right),r\in\mathbb{Z}\cap\left(2^{-\rho},2^{\rho}\right)\right\}\]</span> 对于该采样分布，有<span class="math inline">\(\rho\ll\eta\)</span>，所以任取<span class="math inline">\(x\in\mathcal{D}_{\gamma,\rho}(p)\)</span>，都有极大概率满足<span class="math inline">\(x&lt;2^{\gamma}\)</span>，那么对于一个充分大的整数<span class="math inline">\(t\)</span>，从<span class="math inline">\(\mathcal{D}_{\gamma,\rho}(p)\)</span>中取<span class="math inline">\(t\)</span>个样本<span class="math inline">\(x_1,x_2,\cdots,x_{t}\)</span>，那么所谓近似公约数问题（Approximate Common Divisor Problem, ACD）即为从给定的<span class="math inline">\(t\)</span>个样本<span class="math inline">\(\{x_1,x_2,\cdots,x_{t}\}\)</span>中恢复出<span class="math inline">\(p\)</span>.</p><h3 id="部分近似公约数问题pacd-problem">部分近似公约数问题（PACD Problem）</h3><p>所谓部分近似公约数问题（Partial Approximate Common Divisor Problem, PACD），即为在ACD问题的样本基础上加上了一个特殊样本<span class="math inline">\(x_0=pq_0\)</span>（其中<span class="math inline">\(q_0\)</span>与<span class="math inline">\(\mathcal{D}_{\gamma,\rho}(p)\)</span>中<span class="math inline">\(q\)</span>的取值范围一致），从给定的<span class="math inline">\(t+1\)</span>个样本<span class="math inline">\(\{x_0,x_1,x_2,\cdots,x_{t}\}\)</span>中恢复出<span class="math inline">\(p\)</span>.</p><h2 id="近似公约数问题的求解方法">近似公约数问题的求解方法</h2><p>求解ACD主流的方法有三种：SDA(Simultaneous Diophantine approximation approach), OL(Orthogonal based approach)以及MP(Multivariate polynomial approach)，在此仅介绍SDA.</p><h3 id="同步丢番图逼近方法sda">同步丢番图逼近方法（SDA）</h3><p>这是求解ACD的方法中最简单的一种，大致思想就是对于从<span class="math inline">\(\mathcal{D}_{\gamma,\rho}(p)\)</span>采样出的<span class="math inline">\(\{x_0,x_1,\cdots,x_t\}\)</span>（此处<span class="math inline">\(x_0\)</span>为一般样本），当<span class="math inline">\(\rho\)</span>很小的时候（也就是<span class="math inline">\(r_0,r_1,\cdots,r_t\)</span>都很小的时候），对于<span class="math inline">\(1\le i\le t\)</span>，总有： <span class="math display">\[\frac{x_i}{x_0}=\frac{pq_i+r_i}{pq_0+r_0}\approx\frac{q_i}{q_0}\]</span> 很显然，<span class="math inline">\(q_i/q_0\)</span>是<span class="math inline">\(x_i/x_0\)</span>的同步丢番图近似（simultaneous Diophantine approximation），事实上有： <span class="math display">\[q_ix_0-q_0x_i=q_i(pq_0+r_0)-q_0(pq_i+r_i)=pq_0q_i+q_ir_0-pq_0q_i-q_0r_i=q_ir_0-q_0r_i\]</span> 所以必然有<span class="math inline">\(|q_ix_0-q_0x_i|\approx2^{\rho+\gamma-\eta+1}\)</span>，那么可以通过这个关系构造格基： <span class="math display">\[\pmb{B}=\left(\begin{matrix}2^{\rho+1}&amp;x_1&amp;x_2&amp;\cdots&amp;x_t\\&amp;-x_0&amp;&amp;&amp;\\&amp;&amp;-x_0&amp;&amp;\\&amp;&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;&amp;-x_0\end{matrix}\right)\]</span> 对于这个格有如下关系： <span class="math display">\[\begin{aligned}(q_0,q_1,\cdots,q_t)\pmb{B}&amp;=(2^{\rho+1}p_0,q_0x_1-q_1x_0,\cdots,q_0x_t-q_tx_0)\\&amp;=(2^{\rho+1}p_0,q_0r_1-q_1r_0,\cdots,q_0r_t-q_tr_0)\end{aligned}\]</span> 显然对目标向量<span class="math inline">\((2^{\rho+1}p_0,q_0r_1-q_1r_0,\cdots,q_0r_t-q_tr_0)\)</span>有： <span class="math display">\[||(2^{\rho+1}p_0,q_0r_1-q_1r_0,\cdots,q_0r_t-q_tr_0)||\approx2^{\rho+\gamma-\eta+1}\sqrt{t+1}\]</span> 又对于格基矩阵，有： <span class="math display">\[|\det(\pmb{B})|=2^{\rho+1}x_0^t\approx2^{\rho+\gamma t+1}\]</span> 那么由高斯启发式可知当 <span class="math display">\[2^{\rho+\gamma-\eta+1}\sqrt{t+1}\le\sqrt{\frac{t+1}{2\pi e}}\cdot|\det(\pmb{B})|^{1/(t+1)}\approx2^{(\rho+\gamma t+1)/(t+1)}\sqrt{t+1}\]</span> 成立，即： <span class="math display">\[\begin{aligned}&amp;\rho+\gamma-\eta+1\le \frac{\rho+\gamma t+1}{t+1}\\\Rightarrow&amp;\rho-\eta+1\le\frac{\rho+\gamma t+1-\gamma t-\gamma}{t+1}=\frac{\rho-\gamma+1}{t+1}\\\Rightarrow&amp;t+1\le\frac{\gamma-\rho-1}{\eta-\rho-1}&lt;\frac{\gamma-\rho}{\eta-\rho}\\\Rightarrow&amp;t+1&lt;\frac{\gamma-\rho}{\eta-\rho}\end{aligned}\]</span> 的时候，可以从这个格中规约出目标向量<span class="math inline">\((2^{\rho+1}p_0,q_0r_1-q_1r_0,\cdots,q_0r_t-q_tr_0)\)</span>，此时我们可以从目标向量中获得<span class="math inline">\(q_0\)</span>，因为<span class="math inline">\(r_0\)</span>很小，所以有<span class="math inline">\(x_0\equiv pq_0+r_0\equiv r_0\pmod{q_0}\)</span>，那么我们可以得到<span class="math inline">\(r_0=x_0\mod{q_0}\)</span>，从而计算出<span class="math inline">\(p=\frac{x_0-r_0}{q_0}\)</span>.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 密码学笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Crypto </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>散题(1)</title>
       <link href="/2025/07/30/%E6%95%A3%E9%A2%98-1/"/>
       <url>/2025/07/30/%E6%95%A3%E9%A2%98-1/</url>
